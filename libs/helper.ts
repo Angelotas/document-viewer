@@ -186,7 +186,7 @@ const getBlobFromUrl = (url: string) => {
 }
 
 
-export const uploadToCloud = (fileUrl: string, api: string) => new Promise((resolve, reject) => {
+export const uploadToCloud = (fileUrl: string, api: string) => new Promise<any>((resolve, reject) => {
   getBlobFromUrl(fileUrl).then(blob => {
     const loc = getLocation(fileUrl);
     const name = loc?.pathname ? loc?.pathname?.split('/')[loc?.pathname?.split('/').length - 1] : '';
